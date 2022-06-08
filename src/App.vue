@@ -1,11 +1,53 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <div id="nav">
+      <Navbar />
+    </div>
+  
+    <div style="min-height: 60vh">
+      <router-view v-if="products && categories"
+      :baseURL="baseURL"
+      :products="products"
+      :categories="categories"
+      @fetchData = "fetchData">
+      
+      </router-view>
+  </div>
+
+  <Footer />
+  </div>
 </template>
 
+<script>
+const axios = require('axios');
+import Footer from "./components/FooterView.vue"
+import Navbar from "./components/NavbarView.vue"
+
+export default {
+  data() {
+    return {
+      baseURL :   "http://localhost:8080/",
+      products : null,
+      categories : null
+    }
+  },
+ components : {Footer, Navbar },
+  methods : {
+    async fetchData() {
+      // fetch products
+      await axios.get(this.baseURL + "product/")
+       .then(res => this.products = res.data)
+              .catch(err => console.log(err))
+  await axios.get(this.baseURL + "category/")
+              .then(res => this.categories = res.data)
+              .catch(err => console.log(err))
+ }
+  },
+  mounted() {
+    this.fetchData();
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
