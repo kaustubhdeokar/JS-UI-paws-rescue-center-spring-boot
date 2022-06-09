@@ -1,7 +1,7 @@
 <template>
   <div class="card h-100">
     <div class="embed-responsive embed-responsive-16by9">
-      <img class="card-img-top embed-responsive-item" :src="'../../'+ category.imageUrl.substring(category.baseURL)"  alt="Category Image">
+      <img class="card-img-top embed-responsive-item" :src="'../../'+ category.imageUrl"  alt="Category Image">
     </div>
     <!-- :src="'../../' + category.imageUrl"-->
     <div class="card-body">
