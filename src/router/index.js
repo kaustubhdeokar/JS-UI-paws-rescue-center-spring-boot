@@ -4,6 +4,7 @@ import AddCategory from "../views/Category/AddCategory";
 import Category from "../views/Category/CategoryView";
 import EditCategory from "../views/Category/EditCategory";
 import AddProduct from "../views/Product/AddProduct";
+import Product from "../views/Product/ProductView";
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: "/admin/product/add",
     name: "AddProduct",
     component: AddProduct,
+  },
+  {
+    path: "/admin/product",
+    name: "AdminProduct",
+    component: Product,
   }
 ];
 
