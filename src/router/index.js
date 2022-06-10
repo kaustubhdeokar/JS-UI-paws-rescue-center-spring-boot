@@ -8,6 +8,7 @@ import Product from "../views/Product/ProductView";
 import EditProduct from "../views/Product/EditProduct";
 import ShowDetails from "../views/Product/ShowDetails";
 import Signup from "../views/SignUp";
+import Signin from "../views/SignIn";
 
 const routes = [
   {
@@ -52,8 +53,13 @@ const routes = [
   },
   {
     path: '/signup',
-    name: 'Signup',
+    name: 'SignUp',
     component: Signup
+  },
+  {
+    path: '/signin',
+    name: 'SignIn',
+    component: Signin
   }
 ];
 
