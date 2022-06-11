@@ -29,6 +29,11 @@
                         Add to wishlist
                     </button>
 
+                    <button type="button" id="add-to-cart-button" class="btn" @click="addToCart(this.id)">
+                        Add to Cart
+                        <ion-icon name="cart-outline" v-pre></ion-icon>
+                    </button>
+
                 </div>
 
                 <!-- Dummy placeholder features -->
@@ -81,6 +86,30 @@ import swal from 'sweetalert';
                 });
 
             });
+        },
+         addToCart(productId){
+            // post productId and quantity
+            axios.post(`${this.baseURL}cart/add?token=${this.token}`,{
+                productId : productId,
+                quantity : this.quantity
+            }).then((response) => {
+                // success
+                if(response.status==201){
+                    swal({
+                        text: "Product Added to the cart!",
+                        icon: "success",
+                        closeOnClickOutside: false,
+                    });
+                }
+            },(error) =>{
+                // error handling
+                console.log(error)
+                swal({
+                    text: "Something wrong with add to cart",
+                    icon: "error",
+                    closeOnClickOutside: false,
+                });
+            });
         }
       },
       mounted() {
@@ -106,6 +135,9 @@ import swal from 'sweetalert';
     /* Firefox */
     input[type=number] {
         -moz-appearance: textfield;
+    }
+    #add-to-cart-button {
+    background-color: #febd69;
     }
 
 </style>

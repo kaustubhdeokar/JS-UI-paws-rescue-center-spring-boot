@@ -47,7 +47,6 @@
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <router-link class="dropdown-item" v-if="!token" :to="{name: 'SignIn'}">Log In</router-link>
           <router-link class="dropdown-item" v-else :to="{name : 'WishList'}" >Wishlist</router-link>
-          <router-link class="dropdown-item" v-if="!token" :to="{name: 'SignIn'}">Log In</router-link>
           <router-link class="dropdown-item" v-if="!token" :to="{name: 'SignUp'}">Sign Up</router-link>
           <a class="dropdown-item" v-if="token" href="#" @click="signout">Sign Out</a>
       </div>
@@ -70,7 +69,7 @@ export default {
       signout() {
           localStorage.removeItem('token');
           this.token = null;
-          this.$router.push({name:'Home'});
+          this.$router.push({name:'HomeView'});
           swal({
               text: "Logged you out. Visit Again",
               icon: "success",
