@@ -10,7 +10,7 @@ import ShowDetails from "../views/Product/ShowDetails";
 import Signup from "../views/SignUp";
 import Signin from "../views/SignIn";
 import WishList from "../views/Product/WishList";
-
+import CartView from "../views/Cart/CartView";
 const routes = [
   {
     path: "/",
@@ -66,6 +66,11 @@ const routes = [
     path: '/wishlist',
     name: 'WishList',
     component: WishList
+  },
+  {
+    path : '/cart',
+    name : 'CartView',
+    component : CartView
   }
 ];
 
