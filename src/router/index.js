@@ -9,6 +9,7 @@ import EditProduct from "../views/Product/EditProduct";
 import ShowDetails from "../views/Product/ShowDetails";
 import Signup from "../views/SignUp";
 import Signin from "../views/SignIn";
+import WishList from "../views/Product/WishList";
 
 const routes = [
   {
@@ -60,6 +61,11 @@ const routes = [
     path: '/signin',
     name: 'SignIn',
     component: Signin
+  },
+  {
+    path: '/wishlist',
+    name: 'WishList',
+    component: WishList
   }
 ];
 
