@@ -42,7 +42,7 @@ export default {
       description : null,
       imageUrl : null,
       categoryIndex : null,
-      baseURL : "http://localhost:8080/",
+      baseURL : "https://pawscenter.herokuapp.com/",
     }
   },
   props : [],

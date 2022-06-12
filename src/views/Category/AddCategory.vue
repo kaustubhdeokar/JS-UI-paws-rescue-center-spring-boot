@@ -53,7 +53,7 @@ export default {
         imageUrl : this.imageURL,
       };
 
-    const baseURL =  "http://localhost:8080/";
+    const baseURL =  "https://pawscenter.herokuapp.com/";
 
     await axios({
       method: 'post',

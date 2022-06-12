@@ -25,7 +25,7 @@ export default {
   components : {CategoryBox},
   data() {
     return {
-      baseURL : "http://localhost:8080/",
+      baseURL : "https://pawscenter.herokuapp.com/",
       categories : null,
     }
   },

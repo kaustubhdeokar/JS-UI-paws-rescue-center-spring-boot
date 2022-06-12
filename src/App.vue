@@ -26,7 +26,7 @@ import Navbar from "./components/NavbarView.vue"
 export default {
   data() {
     return {
-      baseURL :   "http://localhost:8080/",
+      baseURL :   "https://pawscenter.herokuapp.com/",
       products : null,
       categories : null
     }
